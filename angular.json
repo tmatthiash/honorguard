@@ -25,7 +25,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../honorguard/node_modules/jquery/dist/jquery.min.js",
+              "../honorguard/node_modules/bootstrap/dist/js/bootstrap.js",
+              "../honorguard/node_modules/moment/min/moment.min.js"
+            ]
           },
           "configurations": {
             "production": {

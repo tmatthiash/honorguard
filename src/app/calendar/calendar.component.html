@@ -1,0 +1,5 @@
+<p>
+  calendar works!
+</p>
+<!--<p-schedule [events]="events" (onViewRender)="loadEvents($event)"></p-schedule>-->
+<p-schedule [events]="events" [header]="header" [editable]="true" (onDayClick)="testFunction($event)"></p-schedule>
