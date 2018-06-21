@@ -11,8 +11,16 @@ import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {CalendarModule} from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
+import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import {TabViewModule} from 'primeng/tabview';
+import { AssignComponent } from './assign/assign.component';
+import { RoleManagerComponent } from './role-manager/role-manager.component';
+import {DropdownModule} from 'primeng/dropdown';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -20,16 +28,24 @@ import {TabViewModule} from 'primeng/tabview';
     NavComponent,
     FooterComponent,
     HomeComponent,
-    CalendarComponent
+    CalendarComponent,
+    AssignComponent,
+    RoleManagerComponent,
+    EventListComponent
   ],
   imports: [
     AppRoutingModule,
     ScheduleModule,
+    MatSelectModule,
     DialogModule,
     InputTextModule,
     CalendarModule,
     CheckboxModule,
+    BrowserAnimationsModule,
+    TableModule,
     ButtonModule,
+    DropdownModule,
+    NgbModule.forRoot(),
     TabViewModule,
     BrowserModule
   ],

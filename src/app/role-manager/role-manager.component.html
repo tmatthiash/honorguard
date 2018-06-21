@@ -1,0 +1,44 @@
+
+<h3>Role Assignment Page</h3>
+
+<p-table [value]="people">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-people>
+        <tr>
+            
+            <td>{{people.name}}</td>
+            <!--<mat-select class="roleSelect" (change)="changeEvent" [(value)]="people.role.value">-->
+            <!--    <mat-option *ngFor="let role of roleOptions" [(value)]="people.role.value">-->
+            <!--      {{ role.label }}-->
+            <!--    </mat-option>-->
+            <!--</mat-select>-->
+           <!--<p-dropdown [options]="roleOptions" [(ngModel)]="people.role"></p-dropdown>-->
+           <!--{{people.role.label}}-->
+           <td>
+            <div ngbDropdown class="d-inline-block" style="width:100%">
+               
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle style="width:100%">
+                  
+                  {{people.role.label}}
+                </button>
+              <div ngbDropdownMenu style="width:100%">
+                  <div *ngFor="let role of roleOptions">
+                    <button class="dropdown-item" (click)="changeEvent($event, people.id, role.value)" >{{role.label}}</button>
+                  </div>
+              </div>
+            </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<!--<mat-select class="roleSelect" (change)="changeEvent" [(value)]="selectedTest">-->
+<!--    <mat-option *ngFor="let role of roleOptions" [value]="role.value">-->
+<!--      {{ role.label }}-->
+<!--    </mat-option>-->
+<!--</mat-select>-->

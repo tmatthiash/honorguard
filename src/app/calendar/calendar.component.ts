@@ -10,6 +10,7 @@ import {ScheduleModule} from 'primeng/schedule';
 export class CalendarComponent implements OnInit {
   events: any[];
   header: any;
+
   
   constructor() { }
     ngOnInit(){

@@ -28,7 +28,8 @@
             "scripts": [
               "../honorguard/node_modules/jquery/dist/jquery.min.js",
               "../honorguard/node_modules/bootstrap/dist/js/bootstrap.js",
-              "../honorguard/node_modules/moment/min/moment.min.js"
+              "../honorguard/node_modules/moment/min/moment.min.js",
+              "../honorguard/node_modules/fullcalendar/dist/fullcalendar.min.js"
             ]
           },
           "configurations": {
