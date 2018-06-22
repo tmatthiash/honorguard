@@ -5,6 +5,7 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { CalendarComponent } from './calendar/calendar.component';
 import {ScheduleModule} from 'primeng/schedule';
 import {DialogModule} from 'primeng/dialog';
@@ -21,6 +22,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventListComponent } from './event-list/event-list.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { EventListComponent } from './event-list/event-list.component';
     CalendarComponent,
     AssignComponent,
     RoleManagerComponent,
-    EventListComponent
+    EventListComponent,
+    EditEventComponent
   ],
   imports: [
     AppRoutingModule,
     ScheduleModule,
     MatSelectModule,
+    FormsModule,
     DialogModule,
     InputTextModule,
     CalendarModule,

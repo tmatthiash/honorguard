@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import {ButtonModule} from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @Component({
-  selector: 'app-event-list',
-  templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.css']
+  selector: 'app-edit-event',
+  templateUrl: './edit-event.component.html',
+  styleUrls: ['./edit-event.component.css']
 })
-export class EventListComponent implements OnInit {
+export class EditEventComponent implements OnInit {
   isModalVisible = false;
-  events:any = [];
+  event:any = [];
   testDate: Date = new Date();
   constructor() { }
 
   ngOnInit() {
     this.testDate = new Date();
-    this.events = [
+    this.event = 
       {
         "id":0,
         "title": "funeral 1",
@@ -34,15 +35,7 @@ export class EventListComponent implements OnInit {
         "notes": "blabhabhabhbahabhabh",
         "required": 0,
         "assigned": 2
-      }
-      ]
-  }
-  testEvent(){
-    debugger;
-    
-  }
-  newEvent(event){
-    this.isModalVisible = true;
+      };
   }
 
 }
