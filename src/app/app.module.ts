@@ -5,7 +5,7 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CalendarComponent } from './calendar/calendar.component';
 import {ScheduleModule} from 'primeng/schedule';
 import {DialogModule} from 'primeng/dialog';
@@ -23,6 +23,7 @@ import {MatSelectModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventListComponent } from './event-list/event-list.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -45,10 +46,12 @@ import { EditEventComponent } from './edit-event/edit-event.component';
     InputTextModule,
     CalendarModule,
     CheckboxModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     TableModule,
     ButtonModule,
     DropdownModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAlWtTrrDb2mQQ8XdJKuzatO2S4yRl9Mho', libraries: ["places"]}),
     NgbModule.forRoot(),
     TabViewModule,
     BrowserModule

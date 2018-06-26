@@ -1,0 +1,15 @@
+:host ::ng-deep .pi pi-times {
+    color:white;
+}
+
+:host ::ng-deep textarea{
+    width:95%;
+}
+
+agm-map {
+  height: 300px;
+}
+
+#map {
+    height: 300px;
+}

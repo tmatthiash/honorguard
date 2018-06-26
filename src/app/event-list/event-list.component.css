@@ -1,0 +1,31 @@
+
+
+:host ::ng-deep .ui-g-3 { 
+    border-color: cadetblue;
+    border-style: solid;
+}
+
+
+
+:host ::ng-deep .ui-g-6 { 
+    border-color: cadetblue;
+    border-style: solid;
+}
+:host ::ng-deep .ng-tns-c5-0 {
+    color:white;
+        z-index: 800;
+
+}
+:host ::ng-deep .ui-dialog-titlebar {
+    background-color:blue;
+}
+
+:host ::ng-deep .ng-trigger {
+    border:blue;
+    border-style: solid;
+    z-index: 900;
+}
+
+:host ::ng-deep .pac-container {
+    z-index: 1500;
+}
