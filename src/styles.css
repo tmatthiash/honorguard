@@ -4,6 +4,7 @@
 @import "~fullcalendar/dist/fullcalendar.css";
 @import "~primeng/resources/primeng.min.css";
 @import "~primeicons/primeicons.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~primeng/resources/themes/south-street/theme.css";
 /*@import "~fullcalendar/dist/fullcalendar.print.css");*/
 body{
@@ -20,3 +21,11 @@ body{
 .pac-container {
     z-index: 1500;
 }
+
+.ui-dialog-content {
+    min-width:700px;
+}
+
+/*.mat-select-trigger{*/
+/*    z-index:1100;*/
+/*}*/

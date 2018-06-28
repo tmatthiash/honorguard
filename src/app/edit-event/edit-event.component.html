@@ -46,70 +46,55 @@
         </div>
     </p-tabPanel>
     <p-tabPanel header="Location">
-        <div class="container" style="z-index: 900">
-            <div class="form-group">
-                <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+        <div class="ui-g">
+            <div class="ui-g-6">
+                <div class="container" style="z-index: 900">
+                    <div class="form-group">
+                        <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+                    </div>
+                    <agm-map (mapReady)="mapReady($event)" [latitude]=latitude [longitude]=longitude [zoom]=9 id="map">
+                        <!--<agm-marker [latitude]=latitude [longitude]=longitude></agm-marker>-->
+                    </agm-map>
+                    <p-growl [(value)]="msgs"></p-growl>
+                </div>
             </div>
-            <agm-map [latitude]=latitude [longitude]=longitude [zoom]=9 id="map">
-                <agm-marker [latitude]=latitude [longitude]=longitude></agm-marker>
-            </agm-map>
+            <div class="ui-g-6">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <h4>Name (if available)</h4>
+                        <input type="text" pInputText [(ngModel)]="placeName" />
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <h4>Address</h4>
+                        <input type="text" pInputText [(ngModel)]="placeStreetAddress" />
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <h4>City</h4>
+                        <input type="text" pInputText [(ngModel)]="placeCity" />
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-3">
+                        <h4>State</h4>
+                    <select [(ngModel)]="placeState">
+                      <option *ngFor="let state of stateList" value= {{state.value}}>
+                         {{state.viewValue}}
+                      </option>
+                    </select>
+                    </div>
+                    <div class="ui-g-9">
+                        <h4>Zip</h4>
+                        <input type="text" pInputText [(ngModel)]="placeZip" />
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--<div id="pac-container">-->
-        <!--    <input id="pac-input" type="text" placeholder="Enter a location">-->
-        <!--</div>-->
-        <!--<div id="map"></div>-->
-        <!--<div id="infowindow-content">-->
-        <!--    <img src="" width="16" height="16" id="place-icon">-->
-        <!--    <span id="place-name" class="title"></span><br>-->
-        <!--    <span id="place-address"></span>-->
-        <!--</div>-->
-        <!--<div id="infowindow-content">-->
-        <!--    <img src="" width="16" height="16" id="place-icon">-->
-        <!--    <span id="place-name" class="title"></span><br>-->
-        <!--    <span id="place-address"></span>-->
-        <!--</div>-->
     </p-tabPanel>
 </p-tabView>
-
-<!--<div class="ui-g">-->
-<!--    <div class="ui-g-3">-->
-<!--        <h4>Title</h4>-->
-<!--        <input type="text" pInputText [(ngModel)]="event.title" />-->
-<!--    </div>-->
-<!--    <div class="ui-g-3">-->
-<!--        <h4>Date</h4>-->
-<!--        <div class="input-group">-->
-<!--            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="event.date" (change)="testEvent()" ngbDatepicker #d="ngbDatepicker">-->
-<!--            <div class="input-group-append">-->
-<!--                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">-->
-<!--                    <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="ui-g-3">-->
-<!--        <h4>Start Time</h4>-->
-<!--        <ngb-timepicker [(ngModel)]="event.startTime" [meridian]="true"></ngb-timepicker>-->
-<!--    </div>-->
-<!--    <div class="ui-g-3">-->
-<!--        <h4>End Time</h4>-->
-<!--        <ngb-timepicker [(ngModel)]="event.endTime" [meridian]="true"></ngb-timepicker>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<div class="ui-g">-->
-<!--    <div class="ui-g-6">-->
-<!--        <h4>Notes</h4>-->
-<!--        <textarea pInputTextarea [(ngModel)]="event.notes"></textarea>-->
-<!--    </div>-->
-<!--    <div class="ui-g-3">-->
-<!--        <h4>Required</h4>-->
-<!--        <input type="text" pInputText [(ngModel)]="event.required" />-->
-<!--    </div>-->
-<!--    <div class="ui-g-3">-->
-<!--        <h4>Assigned</h4>-->
-<!--        <input type="text" pInputText [(ngModel)]="event.assigned" />-->
-<!--    </div>-->
-<!--</div>-->
 
 
 <p-button label="Save" (onClick)="handleClick($event)"></p-button>

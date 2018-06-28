@@ -4,6 +4,14 @@
     border-color: cadetblue;
     border-style: solid;
 }
+:host ::ng-deep .ui-g-9 { 
+    border-color: cadetblue;
+    border-style: solid;
+}
+:host ::ng-deep .ui-g-12 { 
+    border-color: cadetblue;
+    border-style: solid;
+}
 
 
 

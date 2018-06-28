@@ -24,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventListComponent } from './event-list/event-list.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,9 +52,14 @@ import { AgmCoreModule } from '@agm/core';
     TableModule,
     ButtonModule,
     DropdownModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyAlWtTrrDb2mQQ8XdJKuzatO2S4yRl9Mho', libraries: ["places"]}),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAlWtTrrDb2mQQ8XdJKuzatO2S4yRl9Mho', libraries: [
+      "places",
+      "geometry",
+      "drawing"
+      ]}),
     NgbModule.forRoot(),
     TabViewModule,
+    HttpClientModule,
     BrowserModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
