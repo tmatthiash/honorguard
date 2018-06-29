@@ -7,7 +7,8 @@ import {ButtonModule} from 'primeng/button';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-  isModalVisible = false;
+  isEditVisible = false;
+  isAssignVisible = false;
   events:any = [];
   testDate: Date = new Date();
   constructor() { }
@@ -42,7 +43,10 @@ export class EventListComponent implements OnInit {
     
   }
   newEvent(event){
-    this.isModalVisible = true;
+    this.isEditVisible = true;
+  }
+  assignPeople(event){
+    this.isAssignVisible = true;
   }
 
 }

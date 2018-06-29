@@ -1,3 +1,83 @@
-<p>
-  assign works!
-</p>
+<p-tabView>
+    <p-tabPanel header="General Info">
+        <div class="ui-g">
+            <div class="ui-g-4">
+                <h4>Title</h4>
+                {{event.title}}
+            </div>
+            <div class="ui-g-4">
+                <h4>Required</h4>
+                {{pickedPeople.length}}
+            </div>
+            <div class="ui-g-4">
+                <h4>Assigned</h4>
+                {{event.assigned}}
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-4">
+                <h4>Date</h4>
+                {{event.date.day}}/{{event.date.month}}/{{event.date.year}}
+            </div>
+            <div class="ui-g-4">
+                <h4>Start Time</h4>
+                {{event.startTime.hour}}:{{event.startTime.minute}}
+            </div>
+            <div class="ui-g-4">
+                <h4>End Time</h4>
+                {{event.endTime.hour}}:{{event.endTime.minute}}
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <h4>Notes</h4>
+                {{event.notes}}
+            </div>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="Location">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <h4>Name (if available)</h4>
+                {{event.addressName}}
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <h4>Address</h4>
+                {{event.address}}
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <h4>City</h4>
+                {{event.city}}
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-3">
+                <h4>State</h4>
+                {{event.state}}
+            </div>
+            <div class="ui-g-9">
+                <h4>Zip</h4>
+                {{event.zip}}
+            </div>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="Assign Airmen">
+        <H4>{{pickedPeople.length}} of {{event.assigned}} assigned</H4>
+        <p-pickList [source]="availablePeople" [target]="pickedPeople" dragdrop="true">
+            <ng-template let-person pTemplate="item">
+                <div class="ui-helper-clearfix">
+                    {{person}}
+                </div>
+            </ng-template>
+        </p-pickList>
+    </p-tabPanel>
+</p-tabView>
+
+
+<p-button label="Save" (onClick)="handleClick($event)"></p-button>
+
+<p-button label="Cancel" (onClick)="handleClick($event)"></p-button>

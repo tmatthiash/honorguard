@@ -5,7 +5,7 @@
 @import "~primeng/resources/primeng.min.css";
 @import "~primeicons/primeicons.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~primeng/resources/themes/south-street/theme.css";
+@import "~primeng/resources/themes/omega/theme.css";
 /*@import "~fullcalendar/dist/fullcalendar.print.css");*/
 body{
     padding-top: 5rem;

@@ -25,6 +25,8 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+import {GrowlModule} from 'primeng/growl';
+import {PickListModule} from 'primeng/picklist';
 
 @NgModule({
   declarations: [
@@ -46,8 +48,10 @@ import { HttpClientModule } from '@angular/common/http';
     DialogModule,
     InputTextModule,
     CalendarModule,
+    PickListModule,
     CheckboxModule,
     ReactiveFormsModule,
+    GrowlModule,
     BrowserAnimationsModule,
     TableModule,
     ButtonModule,

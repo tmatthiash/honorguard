@@ -12,7 +12,7 @@
             </div>
             <div class="ui-g-4">
                 <h4>Assigned</h4>
-                <input type="text" pInputText [(ngModel)]="event.assigned" />
+                <input type="text" pInputText [(ngModel)]="event.assigned" [disabled]="true"/>
             </div>
         </div>
         <div class="ui-g">
@@ -22,8 +22,8 @@
             </div>
         </div>
     </p-tabPanel>
-    <p-tabPanel header="Time/Date">
-        <div class="ui-g">
+    <p-tabPanel header="Time/Date" >
+        <div class="ui-g" style="min-height: 300px">
             <div class="ui-g-4">
                 <h4>Date</h4>
                 <div class="input-group">
@@ -55,7 +55,7 @@
                     <agm-map (mapReady)="mapReady($event)" [latitude]=latitude [longitude]=longitude [zoom]=9 id="map">
                         <!--<agm-marker [latitude]=latitude [longitude]=longitude></agm-marker>-->
                     </agm-map>
-                    <p-growl [(value)]="msgs"></p-growl>
+                    <p-growl [(value)]="msgs" life=7000></p-growl>
                 </div>
             </div>
             <div class="ui-g-6">

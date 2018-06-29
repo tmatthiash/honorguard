@@ -8,6 +8,8 @@ import {} from 'googlemaps';
 import {MapsAPILoader, GoogleMapsAPIWrapper} from '@agm/core';
 import { HttpClient } from '@angular/common/http';
 import {MessageService} from 'primeng/components/common/messageservice';
+import {GrowlModule} from 'primeng/growl';
+import {Message} from 'primeng/components/common/api';
 
 @Component({
   selector: 'app-edit-event',
@@ -94,7 +96,7 @@ export class EditEventComponent implements OnInit {
   theMap;
   directionsService;
   directionsDisplay;
-  msgs;
+  msgs: Message[] = [];
 
  @ViewChild("search") public searchElementRef: ElementRef;
  
@@ -202,8 +204,9 @@ export class EditEventComponent implements OnInit {
       if (status == google.maps.DirectionsStatus.OK) {
         
               that.msgs = [];
-              var infoMsg = "Distance:" + response.routes["0"].legs["0"].distance + "  Travel TIme:" + response.routes["0"].legs["0"].duration;
-              this.msgs.push({severity:'info', summary:'Route Found', detail:infoMsg});
+              var infoMsg = "Distance: " + response.routes["0"].legs["0"].distance.text + "  Travel Time: " + response.routes["0"].legs["0"].duration.text;
+              
+              that.msgs.push({severity:'info', summary:'Route Found', detail:infoMsg});
               that.directionsDisplay.setDirections(response);
             } else if (status == google.maps.DirectionsStatus.INVALID_REQUEST) {
                 window.alert("Invalid request.");
